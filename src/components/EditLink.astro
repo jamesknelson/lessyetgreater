@@ -1,0 +1,14 @@
+---
+export interface Props {
+  class?: string
+  fileURL: string
+}
+
+const { class: className, fileURL } = Astro.props as Props
+const file = fileURL.split('src/pages')[1]
+const editURL = "https://github.com/jamesknelson/lessyetgreater/blob/main/src/pages" + file
+---
+
+<a class={className} href={editURL}>
+  edit this page
+</a>

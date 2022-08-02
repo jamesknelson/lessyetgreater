@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "[html]": {
+      "editor.formatOnSave": false
+    },
+    "[markdown]": {
+      "editor.formatOnSave": false
+    },
+    "[json]": {
+      "editor.formatOnSave": false
+    }
+  }

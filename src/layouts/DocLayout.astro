@@ -1,0 +1,33 @@
+---
+import SiteLayout from './SiteLayout.astro'
+import EditLink from "@components/EditLink.astro"
+
+export interface Props {
+    content: {
+        file: string
+        title: string
+    }
+}
+
+const { content: { file, title } } = Astro.props as Props;
+---
+
+<SiteLayout title={title}>
+    <main>
+        <article class="prose">
+            <h1 class="font-medium text-3xl mb-6 mt-12">{title}</h1>
+            <slot />
+        </article>
+    </main>
+    <div class="mb-6 mt-16 bg-gray-100 h-[2px]" />
+    <footer class="text-center text-sm text-gray-400 underline">
+        <EditLink fileURL={file} />
+    </footer>
+</SiteLayout>
+
+<style>
+    main {
+        margin: auto;
+        max-width: 70ch;
+    }
+</style>

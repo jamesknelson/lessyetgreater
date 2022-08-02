@@ -1,80 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import SiteLayout from "@layouts/SiteLayout.astro"
+import Card from "@components/Card.astro"
+import EditLink from "@components/EditLink.astro"
 ---
 
-<Layout title="Less, yet greater">
-	<main>
-		<h1 class="font-bold text-lg mb-4">Less, yet greater</h1>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="/your-share"
-				title="What's your share?"
-				body="Earth has a lot of space, but also has a lot of people. What happens if we split the space evenly?"
-			/>
-			<Card
-				href="/grown-products"
-				title="What's grown?"
-				body="Some materials can be replaced; can be grown. Others can't. How do we translate this concept from materials to products?"
-			/>
+<SiteLayout>
+	<main class="px-2 lg:px-0">
+		<ul role="list" class="link-card-grid my-6">
+			<Card href="/your-share" title="Who owns your share?"
+				body="Earth has a lot of space, but it also has a lot of people. If we split things evenly between us, how much do we each get?" />
+			<Card href="/who-owns-your-share" title="What's your share?" body="" />
 		</ul>
+		<div class="my-6 bg-gray-100 h-[2px]" />
+		<ul role="list" class="link-card-grid mb-8">
+			<Card href="/sustainable-or-sustained" title="Sustainable? Or sustained?"
+				body="What happens to a physical thing when its owner no longer needs it?" />
+			<Card href="/things-that-recycle-themselves" title="Things that recycle themselves"
+				body="What if every material was a recycled material – all without any effort on your part?" />
+			<Card href="/where-profits-go" title="Where do the profits go?"
+				body="A product costs more than its material. What happens to the rest of what you've paid?" />
+			<Card href="/renewable-money" title="Renewable money"
+				body="If you've paid the fair price, how can you ensure that the producer will pay it forward?" />
+			<Card href="/who-can-afford-to-care" title="Who can afford to care?"
+				body="When many of us can barely afford existing prices. Who could possibly pay fair prices?" />
+			<Card href="/transferably-certifiably-green" title="Transferably, certifiably, green"
+				body="What if an investment in our collective future could be an investment in your financial future?" />
+		</ul>
+		<div class="my-6 bg-gray-100 h-[2px]" />
+		<footer class="text-center text-sm text-gray-400 underline">
+			<EditLink fileURL={import.meta.url} />
+		</footer>
 	</main>
-</Layout>
+</SiteLayout>
 
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	h1 {
-		margin: 2rem 0;
-	}
-
 	main {
 		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
+		max-width: 70ch;
 	}
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
 		gap: 1rem;
 		padding: 0;
 	}

@@ -1,20 +1,28 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
+	title?: string;
+	body?: string;
 	href: string;
 }
 const { href, title, body } = Astro.props;
 ---
 
 <li
-	class="transition bg-white py-3 px-6 rounded shadow-sm hover:shadow-md outline outline-2 outline-transparent hover:outline-blue-500">
+	class="transition bg-white py-4 px-6 rounded shadow-sm hover:shadow-md outline outline-2 outline-transparent hover:outline-blue-500">
 	<a href={href}>
-		<h2 class="font-medium text-lg">
-			{title}
+		<h2 class="font-medium text-lg mb-1">
+			<slot name="title">{title}</slot>
 		</h2>
-		<p class="mb-1">
-			{body}
-		</p>
+		<div id="body">
+			<slot>
+				<p>{body}</p>
+			</slot>
+		</div>
 	</a>
 </li>
+
+<style>
+	#body> :global(p) {
+		margin: 0.5rem 0;
+	}
+</style>

@@ -6,31 +6,44 @@ import EditLink from "@components/EditLink.astro"
 
 <SiteLayout>
 	<main class="px-2 lg:px-0">
-		<ul role="list" class="link-card-grid my-6">
-			<Card href="/your-share" title="Who owns your share?"
-				body="Earth has a lot of space, but it also has a lot of people. If we split things evenly between us, how much do we each get?" />
-			<Card href="/who-owns-your-share" title="What's your share?" body="" />
+		<div class="my-9 prose ">
+			<p><em>Of course</em> there's a depression epidemic. At some level, we realize that we're wasting our lives
+				in bullshit jobs, doing what we're told so the rich may grow richer.</p>
+			<p>But what other choice do we have?</p>
+		</div>
+		<ul role="list" class="link-card-grid my-8">
+			<Card href="/a-viable-alternative" title="A viable alternative">
+				<p>A share of this planet's land and natural wealth is your birthright. Noone should be forced to pay rent
+					for their right to existence, and here's why in the future, nobody will.</p>
+			</Card>
 		</ul>
 		<div class="my-6 bg-gray-100 h-[2px]" />
-		<ul role="list" class="link-card-grid mb-8">
-			<Card href="/sustainable-or-sustained" title="Sustainable? Or sustained?"
+		<ul role="list" class="link-card-grid my-8">
+			<Card href="/sustainable-or-sustained" title="Sustained? Or just sustainable?"
 				body="What happens to a physical thing when its owner no longer needs it?" />
 			<Card href="/things-that-recycle-themselves" title="Things that recycle themselves"
 				body="What if every material was a recycled material – all without any effort on your part?" />
 			<Card href="/where-profits-go" title="Where do the profits go?"
-				body="A product costs more than its material. What happens to the rest of what you've paid?" />
+				body="A thing costs more than its material. Where does the rest of the bill go?" />
 			<Card href="/renewable-money" title="Renewable money"
 				body="If you've paid the fair price, how can you ensure that the producer will pay it forward?" />
 			<Card href="/who-can-afford-to-care" title="Who can afford to care?"
-				body="When many of us can barely afford existing prices. Who could possibly pay fair prices?" />
+				body="Many of us can barely afford existing prices. Who could possibly pay fair prices?" />
 			<Card href="/transferably-certifiably-green" title="Transferably, certifiably, green"
 				body="What if an investment in our collective future could be an investment in your financial future?" />
 		</ul>
 		<div class="my-6 bg-gray-100 h-[2px]" />
-		<footer class="text-center text-sm text-gray-400 underline">
-			<EditLink fileURL={import.meta.url} />
-		</footer>
+		<ul role="list" class="link-card-grid my-8">
+			<Card href="/your-share" title="What's your share?"
+				body="Earth has a lot of space, but it also has a lot of people. If we split things evenly between us, how much do we each get?" />
+			<Card href="/" title="Who owns your share?" body="" />
+			<Card href="/" title="What do we consume?" body="" />
+			<Card href="/" title="What could you produce?" body="" />
+		</ul>
 	</main>
+	<footer class="text-center text-sm text-gray-400 underline border-t-2 border-gray-100 p-4 mt-12">
+		<EditLink fileURL={import.meta.url} />
+	</footer>
 </SiteLayout>
 
 <style>

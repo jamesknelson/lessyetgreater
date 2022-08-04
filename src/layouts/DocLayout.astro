@@ -14,7 +14,7 @@ const { content: { file, title } } = Astro.props as Props;
 
 <SiteLayout title={title}>
     <main>
-        <article class="prose">
+        <article class="prose px-3">
             <h1 class="font-medium text-3xl mb-6 mt-12">{title}</h1>
             <slot />
         </article>
